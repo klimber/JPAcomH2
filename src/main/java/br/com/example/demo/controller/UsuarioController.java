@@ -20,11 +20,6 @@ public class UsuarioController {
 
 	@GetMapping("/usuarios")
 	public List<Usuario> buscarTodos() {
-		Usuario usuario = new Usuario();
-		usuario.setEmail("klimber.mail@gmail.com");
-		usuario.setNome("Allan Krueger");
-		usuario.setSenha("hahaha");
-		usuarioRepository.save(usuario);
 		Iterable<Usuario> todos = usuarioRepository.findAll();
 		return toList(todos);
 	}
